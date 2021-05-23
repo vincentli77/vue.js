@@ -1,15 +1,32 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <Child v-bind:msg= "ChildMsg"/>
   </div>
 </template>
 
 <script>
+import Child from "../components/HelloWorldChild"
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    Child
+  },
+
+  data(){
+    let ChildMsg = "bonjour"
+
+    return{
+    ChildMsg
   }
+
+  },
+
+
 }
 </script>
 

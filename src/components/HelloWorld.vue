@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <Child v-bind:msg= "ChildMsg"/>
+    <button @click="klik"></button>
   </div>
 </template>
 
@@ -25,6 +26,12 @@ export default {
   }
 
   },
+
+  methods : {
+    klik() {
+      this.$emit('parent-click',{msg: this.ChildMsg})
+    }
+  }
 
 
 }

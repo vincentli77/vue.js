@@ -41,7 +41,6 @@ export default {
     msg: String,
   },
 
-
   data() {
     return {
       cost: [
@@ -53,19 +52,17 @@ export default {
       word: "",
       state: true,
     };
-    
   },
 
-    beforeMount() {
+  beforeMount() {
     const date = new Date();
     const day = date.getDate;
     if (day % 2 !== 0) {
-        this.cost.forEach((item) => {
-        item.price = item.price*2; 
+      this.cost.forEach((item) => {
+        item.price = item.price * 2;
       });
     }
   },
-
 
   methods: {
     alert(a) {
@@ -118,8 +115,10 @@ a {
   width: 80%;
   margin: 0 auto;
   margin-top: 2%;
-
 }
-
-
+.test {
+  h2 {
+    color: red;
+  }
+}
 </style>

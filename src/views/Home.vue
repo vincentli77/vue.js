@@ -5,8 +5,9 @@
 </head>
 <body>
   <div>
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <HelloWorld @parent-click="klik" msg="Welcome to Your Vue.js App"/>
   </div>
+  <h1>{{this.msg}}</h1>
 </body>
 </html>
 
@@ -20,6 +21,19 @@ export default {
   name: 'Home',
   components: {
     HelloWorld,
+  },
+
+  data(){
+    return {
+      msg : ''
+    }
+  },
+
+  methods : {
+    klik(a){
+            this.msg = a.msg
+            console.log(this.msg);
+    }
   }
 }
 </script>
